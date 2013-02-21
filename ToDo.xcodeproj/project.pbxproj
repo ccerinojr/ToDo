@@ -20,6 +20,7 @@
 		D98D286716D6A290001886B8 /* ToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98D286616D6A290001886B8 /* ToDoViewController.m */; };
 		D98D286F16D6A4EA001886B8 /* TaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98D286E16D6A4EA001886B8 /* TaskViewController.m */; };
 		D9F59C2F16D6AC2800735470 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = D98D287116D6A799001886B8 /* Task.m */; };
+		D9F59C3216D6B5DD00735470 /* TaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F59C3116D6B5DD00735470 /* TaskCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,8 @@
 		D98D286E16D6A4EA001886B8 /* TaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskViewController.m; sourceTree = "<group>"; };
 		D98D287016D6A799001886B8 /* Task.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
 		D98D287116D6A799001886B8 /* Task.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
+		D9F59C3016D6B5DD00735470 /* TaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskCell.h; sourceTree = "<group>"; };
+		D9F59C3116D6B5DD00735470 /* TaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +102,8 @@
 				D98D286D16D6A4EA001886B8 /* TaskViewController.h */,
 				D98D286E16D6A4EA001886B8 /* TaskViewController.m */,
 				D98D285116D6A290001886B8 /* Supporting Files */,
+				D9F59C3016D6B5DD00735470 /* TaskCell.h */,
+				D9F59C3116D6B5DD00735470 /* TaskCell.m */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 				D98D285B16D6A290001886B8 /* AppDelegate.m in Sources */,
 				D98D286716D6A290001886B8 /* ToDoViewController.m in Sources */,
 				D98D286F16D6A4EA001886B8 /* TaskViewController.m in Sources */,
+				D9F59C3216D6B5DD00735470 /* TaskCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

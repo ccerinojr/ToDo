@@ -9,6 +9,7 @@
 #import "ToDoViewController.h"
 #import "TaskViewController.h"
 #import "Task.h"
+#import "TaskCell.h"
 
 @interface ToDoViewController () <TaskViewControllerDelegate>
 {
@@ -82,8 +83,15 @@
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
    Task* task = [_tasks objectAtIndex:indexPath.row];
+   TaskCell* taskCell = (TaskCell*)cell;
+
+   taskCell.titleLabel.text = task.title;
+   taskCell.descriptionLabel.text = task.description;
    
-   cell.textLabel.text = task.title;
+   NSDateFormatter* dateFormater = [[NSDateFormatter alloc] init];
+   [dateFormater setDateFormat:@"M/d/YY '@' h:mm a"];
+   taskCell.dateLabel.text = [dateFormater stringFromDate:task.dueDate];
+   
 }
 
 @end
