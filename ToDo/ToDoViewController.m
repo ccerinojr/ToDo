@@ -88,6 +88,10 @@
       [_tasks addObject:task];
       [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:_tasks.count-1 inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
    }
+   else
+   {
+      [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:[_tasks indexOfObject:0] inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+   }
 
    [self saveTasks];
 }
