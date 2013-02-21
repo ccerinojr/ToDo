@@ -18,6 +18,7 @@
 		D98D286116D6A290001886B8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D98D286016D6A290001886B8 /* Default-568h@2x.png */; };
 		D98D286416D6A290001886B8 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98D286216D6A290001886B8 /* MainStoryboard.storyboard */; };
 		D98D286716D6A290001886B8 /* ToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98D286616D6A290001886B8 /* ToDoViewController.m */; };
+		D98D286F16D6A4EA001886B8 /* TaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98D286E16D6A4EA001886B8 /* TaskViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		D98D286316D6A290001886B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		D98D286516D6A290001886B8 /* ToDoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToDoViewController.h; sourceTree = "<group>"; };
 		D98D286616D6A290001886B8 /* ToDoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoViewController.m; sourceTree = "<group>"; };
+		D98D286D16D6A4EA001886B8 /* TaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskViewController.h; sourceTree = "<group>"; };
+		D98D286E16D6A4EA001886B8 /* TaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				D98D286516D6A290001886B8 /* ToDoViewController.h */,
 				D98D286616D6A290001886B8 /* ToDoViewController.m */,
 				D98D285116D6A290001886B8 /* Supporting Files */,
+				D98D286D16D6A4EA001886B8 /* TaskViewController.h */,
+				D98D286E16D6A4EA001886B8 /* TaskViewController.m */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 				D98D285716D6A290001886B8 /* main.m in Sources */,
 				D98D285B16D6A290001886B8 /* AppDelegate.m in Sources */,
 				D98D286716D6A290001886B8 /* ToDoViewController.m in Sources */,
+				D98D286F16D6A4EA001886B8 /* TaskViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
