@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 TechSmith. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ToDoViewController.h"
 
-@interface ViewController ()
+@interface ToDoViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ToDoViewController
 
 - (void)viewDidLoad
 {
