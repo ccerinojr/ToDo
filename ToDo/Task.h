@@ -14,10 +14,10 @@ enum{
    TaskPastDue
 } typedef TaskState;
 
-@interface Task : NSObject
+@interface Task : NSObject <NSCoding>
 
 @property (strong, nonatomic) NSString* title;
-@property (strong, nonatomic) NSString* description;
+@property (strong, nonatomic) NSString* taskDescription;
 @property (strong, nonatomic) UIImage* image;
 @property (strong, nonatomic) NSDate* dueDate;
 

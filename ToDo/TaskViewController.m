@@ -28,7 +28,7 @@
    if (self.task)
    {
       self.titleTextField.text = self.task.title;
-      self.descriptionTextView.text = self.task.description;
+      self.descriptionTextView.text = self.task.taskDescription;
       self.datePicker.date = self.task.dueDate;
    }
    else
@@ -61,7 +61,7 @@
 - (IBAction)save:(id)sender
 {
    self.task.title = self.titleTextField.text;
-   self.task.description = self.descriptionTextView.text;
+   self.task.taskDescription = self.descriptionTextView.text;
    self.task.dueDate = self.datePicker.date;
    
    [self.taskDelgate taskSaved:self.task wasEditting:self.editing];

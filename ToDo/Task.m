@@ -17,9 +17,28 @@
    return [cal dateFromComponents:components];
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+   self = [super init];
+   if (self)
+   {
+      self.title = [aDecoder decodeObjectForKey:@"title"];
+      self.taskDescription = [aDecoder decodeObjectForKey:@"description"];
+      self.dueDate = [aDecoder decodeObjectForKey:@"dueDate"];
+   }
+   
+   return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+   [aCoder encodeObject:self.title forKey:@"title"];
+   [aCoder encodeObject:self.taskDescription forKey:@"description"];
+   [aCoder encodeObject:self.dueDate forKey:@"dueDate"];
+}
+
 - (TaskState)isTaskDue
 {
-  
    NSDate* today = [[self class] dateWithRelativeUnitsForComparison:[NSDate date]];
    NSDate* dueDate = [[self class] dateWithRelativeUnitsForComparison:self.dueDate];
    

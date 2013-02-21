@@ -12,6 +12,7 @@
 #import "TaskCell.h"
 #import <QuartzCore/QuartzCore.h>
 
+
 @interface ToDoViewController () <TaskViewControllerDelegate>
 {
    NSMutableArray* _tasks;
@@ -21,12 +22,39 @@
 
 @implementation ToDoViewController
 
++ (NSURL*)urlForSavedTasks
+{
+   static NSURL* localDocumentsDirectoryURL = nil;
+   if (localDocumentsDirectoryURL == nil)
+   {
+      NSString* documentsDirectoryPath = [NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES ) objectAtIndex:0];
+      localDocumentsDirectoryURL = [[NSURL fileURLWithPath:documentsDirectoryPath] URLByAppendingPathComponent:@"tasks"];
+
+   }
+   return localDocumentsDirectoryURL;
+}
+
+- (void)saveTasks
+{
+   [NSKeyedArchiver archiveRootObject:_tasks toFile:[[[self class] urlForSavedTasks] path]];
+}
+
+- (void)loadTasks
+{
+   _tasks = [NSKeyedUnarchiver unarchiveObjectWithFile:[[[self class] urlForSavedTasks] path]];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
    
-   _tasks = [NSMutableArray array];
+   [self loadTasks];
+   
+   if (!_tasks)
+   {
+      _tasks = [NSMutableArray array];
+   }
    
    self.title = @"To Do";
 }
@@ -60,6 +88,8 @@
       [_tasks addObject:task];
       [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:_tasks.count-1 inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
    }
+
+   [self saveTasks];
 }
 
 #pragma mark UITableViewDataSource
@@ -87,7 +117,7 @@
    TaskCell* taskCell = (TaskCell*)cell;
 
    taskCell.titleLabel.text = task.title;
-   taskCell.descriptionLabel.text = task.description;
+   taskCell.descriptionLabel.text = task.taskDescription;
    
    NSDateFormatter* dateFormater = [[NSDateFormatter alloc] init];
    [dateFormater setDateFormat:@"M/d/YY '@' h:mm a"];
