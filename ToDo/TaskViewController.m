@@ -47,12 +47,6 @@
 
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (IBAction)cancel:(id)sender
 {
    [self.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
