@@ -8,11 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+enum{
+   TaskNotDue,
+   TaskDue,
+   TaskPastDue
+} typedef TaskState;
+
 @interface Task : NSObject
 
 @property (strong, nonatomic) NSString* title;
 @property (strong, nonatomic) NSString* description;
 @property (strong, nonatomic) UIImage* image;
 @property (strong, nonatomic) NSDate* dueDate;
+
+- (TaskState)isTaskDue;
 
 @end

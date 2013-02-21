@@ -10,6 +10,7 @@
 #import "TaskViewController.h"
 #import "Task.h"
 #import "TaskCell.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface ToDoViewController () <TaskViewControllerDelegate>
 {
@@ -91,6 +92,24 @@
    NSDateFormatter* dateFormater = [[NSDateFormatter alloc] init];
    [dateFormater setDateFormat:@"M/d/YY '@' h:mm a"];
    taskCell.dateLabel.text = [dateFormater stringFromDate:task.dueDate];
+   
+   TaskState state = [task isTaskDue];
+   taskCell.dateLabel.textColor = state == TaskNotDue ? [UIColor blueColor] : [UIColor redColor];
+  
+   if (state == TaskPastDue)
+   {
+      CABasicAnimation* fade = [CABasicAnimation animationWithKeyPath:@"opacity"];
+      fade.fromValue = [NSNumber numberWithFloat:1.0];
+      fade.toValue = [NSNumber numberWithFloat:0.0];
+      fade.repeatCount = HUGE_VALF;
+      fade.duration = 0.75;
+      fade.autoreverses = YES;
+      [taskCell.dateLabel.layer addAnimation:fade forKey:@"fade"];
+   }
+   else
+   {
+      [taskCell.layer removeAllAnimations];
+   }
    
 }
 
