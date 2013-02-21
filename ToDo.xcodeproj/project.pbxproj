@@ -40,6 +40,8 @@
 		D98D286616D6A290001886B8 /* ToDoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoViewController.m; sourceTree = "<group>"; };
 		D98D286D16D6A4EA001886B8 /* TaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskViewController.h; sourceTree = "<group>"; };
 		D98D286E16D6A4EA001886B8 /* TaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskViewController.m; sourceTree = "<group>"; };
+		D98D287016D6A799001886B8 /* Task.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		D98D287116D6A799001886B8 /* Task.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,8 @@
 				D98D286216D6A290001886B8 /* MainStoryboard.storyboard */,
 				D98D286516D6A290001886B8 /* ToDoViewController.h */,
 				D98D286616D6A290001886B8 /* ToDoViewController.m */,
+				D98D287016D6A799001886B8 /* Task.h */,
+				D98D287116D6A799001886B8 /* Task.m */,
 				D98D285116D6A290001886B8 /* Supporting Files */,
 				D98D286D16D6A4EA001886B8 /* TaskViewController.h */,
 				D98D286E16D6A4EA001886B8 /* TaskViewController.m */,
