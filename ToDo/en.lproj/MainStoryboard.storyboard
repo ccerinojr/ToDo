@@ -152,7 +152,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <constraint firstAttribute="height" constant="30" id="UOR-SQ-F02"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="zbA-30-e2y" id="KhL-HV-wCh"/>
+                                </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I3e-a3-bhx">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -169,10 +172,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <constraint firstItem="jw7-sf-fo6" firstAttribute="leading" secondItem="Mcw-2G-xeH" secondAttribute="leading" type="default" id="4zo-HY-xzM"/>
                             <constraint firstItem="bWF-me-K8l" firstAttribute="leading" secondItem="Mcw-2G-xeH" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="7cz-lZ-esw"/>
                             <constraint firstItem="z6S-8v-iDH" firstAttribute="top" secondItem="Cck-Ah-j2u" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="8yT-d0-1ZI"/>
+                            <constraint firstItem="cmP-CF-mQ4" firstAttribute="trailing" secondItem="Mcw-2G-xeH" secondAttribute="trailing" type="default" id="BGu-iH-x9t"/>
                             <constraint firstItem="bWF-me-K8l" firstAttribute="top" secondItem="Mcw-2G-xeH" secondAttribute="top" constant="79" id="EuN-Ke-ybT"/>
                             <constraint firstItem="cmP-CF-mQ4" firstAttribute="bottom" secondItem="Mcw-2G-xeH" secondAttribute="bottom" type="default" id="Ezb-ay-reP"/>
                             <constraint firstItem="I3e-a3-bhx" firstAttribute="leading" secondItem="Mcw-2G-xeH" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Fyb-8V-obB"/>
-                            <constraint firstItem="cmP-CF-mQ4" firstAttribute="leading" secondItem="Mcw-2G-xeH" secondAttribute="leading" type="default" id="GfG-KI-kJY"/>
                             <constraint firstItem="cmP-CF-mQ4" firstAttribute="top" secondItem="WOr-8w-OOg" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="L7V-UC-NWk"/>
                             <constraint firstItem="I3e-a3-bhx" firstAttribute="top" secondItem="z6S-8v-iDH" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="THq-NI-1vn"/>
                             <constraint firstItem="Cck-Ah-j2u" firstAttribute="leading" secondItem="bWF-me-K8l" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="cTe-Dg-kMa"/>
@@ -180,9 +183,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <constraint firstItem="jw7-sf-fo6" firstAttribute="top" secondItem="Mcw-2G-xeH" secondAttribute="top" type="default" id="fws-hn-OXz"/>
                             <constraint firstAttribute="trailing" secondItem="I3e-a3-bhx" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="lOQ-1z-Vg2"/>
                             <constraint firstItem="WOr-8w-OOg" firstAttribute="leading" secondItem="Mcw-2G-xeH" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="nc9-dA-mA7"/>
+                            <constraint firstItem="cmP-CF-mQ4" firstAttribute="leading" secondItem="Mcw-2G-xeH" secondAttribute="leading" type="default" id="qr2-dc-8ob"/>
                             <constraint firstItem="Cck-Ah-j2u" firstAttribute="top" secondItem="Mcw-2G-xeH" secondAttribute="top" constant="75" id="vGP-Sq-neU"/>
                             <constraint firstAttribute="trailing" secondItem="Cck-Ah-j2u" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="vLl-wt-kx3"/>
-                            <constraint firstItem="cmP-CF-mQ4" firstAttribute="trailing" secondItem="Mcw-2G-xeH" secondAttribute="trailing" type="default" id="wHX-uh-oBJ"/>
                             <constraint firstItem="jw7-sf-fo6" firstAttribute="trailing" secondItem="Mcw-2G-xeH" secondAttribute="trailing" type="default" id="wXL-Qb-jUp"/>
                         </constraints>
                     </view>
@@ -194,7 +197,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j6u-ls-95X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1348" y="206"/>
+            <point key="canvasLocation" x="1184" y="99"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="chd-25-wsQ">
@@ -212,32 +215,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <point key="canvasLocation" x="85" y="206"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="TaskCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TaskCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="TaskViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TaskViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="save:"/>
-                <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
-                <relationship kind="outlet" name="descriptionTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="titleTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ToDoViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ToDoViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

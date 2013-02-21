@@ -9,7 +9,7 @@
 #import "TaskViewController.h"
 #import "Task.h"
 
-@interface TaskViewController ()
+@interface TaskViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
@@ -35,6 +35,15 @@
    {
       self.task = [[Task alloc] init];
    }
+   
+   UIToolbar* toolbar = [[UIToolbar alloc] init];
+   [toolbar setBarStyle:UIBarStyleBlackTranslucent];
+   [toolbar sizeToFit];
+   
+   UIBarButtonItem* done = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self.descriptionTextView action:@selector(resignFirstResponder)];
+   UIBarButtonItem* space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:NULL];
+   [toolbar setItems:[NSArray arrayWithObjects:space, done, nil]];
+   self.descriptionTextView.inputAccessoryView = toolbar;
 
 }
 
@@ -58,5 +67,12 @@
    [self.taskDelgate taskSaved:self.task wasEditting:self.editing];
    [self.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
 }
+
+-(BOOL) textFieldShouldReturn:(UITextField*) textField
+{
+   [textField resignFirstResponder];
+   return YES;
+}
+
 
 @end
