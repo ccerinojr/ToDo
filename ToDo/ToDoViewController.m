@@ -42,6 +42,13 @@
       TaskViewController* taskViewController = segue.destinationViewController;
       taskViewController.taskDelgate = self;
    }
+   else if ([segue.identifier isEqualToString:@"EditTask"])
+   {
+      TaskViewController* taskViewController = segue.destinationViewController;
+      taskViewController.taskDelgate = self;
+      NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+      taskViewController.task = [_tasks objectAtIndex:indexPath.row];
+   }
 }
 
 - (void)taskSaved:(Task*)task wasEditting:(BOOL)editing
