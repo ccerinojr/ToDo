@@ -19,6 +19,7 @@
 		D98D286416D6A290001886B8 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98D286216D6A290001886B8 /* MainStoryboard.storyboard */; };
 		D98D286716D6A290001886B8 /* ToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98D286616D6A290001886B8 /* ToDoViewController.m */; };
 		D98D286F16D6A4EA001886B8 /* TaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98D286E16D6A4EA001886B8 /* TaskViewController.m */; };
+		D9F59C2F16D6AC2800735470 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = D98D287116D6A799001886B8 /* Task.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,9 +96,9 @@
 				D98D286616D6A290001886B8 /* ToDoViewController.m */,
 				D98D287016D6A799001886B8 /* Task.h */,
 				D98D287116D6A799001886B8 /* Task.m */,
-				D98D285116D6A290001886B8 /* Supporting Files */,
 				D98D286D16D6A4EA001886B8 /* TaskViewController.h */,
 				D98D286E16D6A4EA001886B8 /* TaskViewController.m */,
+				D98D285116D6A290001886B8 /* Supporting Files */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -182,6 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9F59C2F16D6AC2800735470 /* Task.m in Sources */,
 				D98D285716D6A290001886B8 /* main.m in Sources */,
 				D98D285B16D6A290001886B8 /* AppDelegate.m in Sources */,
 				D98D286716D6A290001886B8 /* ToDoViewController.m in Sources */,
@@ -308,6 +310,7 @@
 				D98D286C16D6A290001886B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

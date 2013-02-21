@@ -7,8 +7,13 @@
 //
 
 #import "ToDoViewController.h"
+#import "TaskViewController.h"
+#import "Task.h"
 
-@interface ToDoViewController ()
+@interface ToDoViewController () <TaskViewControllerDelegate>
+{
+   NSMutableArray* _tasks;
+}
 
 @end
 
@@ -18,12 +23,60 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+   
+   _tasks = [NSMutableArray array];
+   
+   self.title = @"To Do";
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	if ([segue.identifier isEqualToString:@"AddTask"])
+	{
+      TaskViewController* taskViewController = segue.destinationViewController;
+      taskViewController.taskDelgate = self;
+   }
+}
+
+- (void)taskSaved:(Task*)task wasEditting:(BOOL)editing
+{
+   if (!editing)
+   {
+      [_tasks addObject:task];
+      [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:_tasks.count-1 inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+   }
+}
+
+#pragma mark UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+   return [_tasks count];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+   return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+   return [tableView dequeueReusableCellWithIdentifier:@"ToDoCell"];;
+}
+
+#pragma mark UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+   Task* task = [_tasks objectAtIndex:indexPath.row];
+   
+   cell.textLabel.text = task.title;
 }
 
 @end
