@@ -20,7 +20,5 @@ enum{
 @property (strong, nonatomic) NSString* taskDescription;
 @property (strong, nonatomic) UIImage* image;
 @property (strong, nonatomic) NSDate* dueDate;
-
-- (TaskState)isTaskDue;
-
+@property (readonly) TaskState isTaskDue;
 @end

@@ -120,10 +120,8 @@
    [dateFormater setDateFormat:@"M/d/YY '@' h:mm a"];
    taskCell.dateLabel.text = [dateFormater stringFromDate:task.dueDate];
    
-   TaskState state = [task isTaskDue];
-   taskCell.dateLabel.textColor = state == TaskNotDue ? [UIColor blueColor] : [UIColor redColor];
-  
-   if (state == TaskPastDue)
+   taskCell.dateLabel.textColor = task.isTaskDue == TaskNotDue ? [UIColor blueColor] : [UIColor redColor];  
+   if (task.isTaskDue == TaskPastDue)
    {
       CABasicAnimation* fade = [CABasicAnimation animationWithKeyPath:@"opacity"];
       fade.fromValue = [NSNumber numberWithFloat:1.0];
@@ -135,7 +133,7 @@
    }
    else
    {
-      [taskCell.layer removeAllAnimations];
+      [taskCell.layer removeAnimationForKey:@"fade"];
    }
    
 }
