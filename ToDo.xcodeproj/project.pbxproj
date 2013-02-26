@@ -18,7 +18,6 @@
 		D98D286116D6A290001886B8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D98D286016D6A290001886B8 /* Default-568h@2x.png */; };
 		D98D286416D6A290001886B8 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98D286216D6A290001886B8 /* MainStoryboard.storyboard */; };
 		D98D286716D6A290001886B8 /* ToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98D286616D6A290001886B8 /* ToDoViewController.m */; };
-		D98D286F16D6A4EA001886B8 /* TaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98D286E16D6A4EA001886B8 /* TaskViewController.m */; };
 		D9F59C2F16D6AC2800735470 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = D98D287116D6A799001886B8 /* Task.m */; };
 		D9F59C3216D6B5DD00735470 /* TaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F59C3116D6B5DD00735470 /* TaskCell.m */; };
 		D9F59C3716D6C00600735470 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F59C3616D6C00600735470 /* QuartzCore.framework */; };
@@ -41,10 +40,9 @@
 		D98D286316D6A290001886B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		D98D286516D6A290001886B8 /* ToDoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToDoViewController.h; sourceTree = "<group>"; };
 		D98D286616D6A290001886B8 /* ToDoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoViewController.m; sourceTree = "<group>"; };
-		D98D286D16D6A4EA001886B8 /* TaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskViewController.h; sourceTree = "<group>"; };
-		D98D286E16D6A4EA001886B8 /* TaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskViewController.m; sourceTree = "<group>"; };
 		D98D287016D6A799001886B8 /* Task.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
 		D98D287116D6A799001886B8 /* Task.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
+		D9E8C4B316DD0EEA0089DD50 /* TaskViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskViewControllerDelegate.h; sourceTree = "<group>"; };
 		D9F59C3016D6B5DD00735470 /* TaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskCell.h; sourceTree = "<group>"; };
 		D9F59C3116D6B5DD00735470 /* TaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskCell.m; sourceTree = "<group>"; };
 		D9F59C3616D6C00600735470 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -103,11 +101,10 @@
 				D98D286616D6A290001886B8 /* ToDoViewController.m */,
 				D98D287016D6A799001886B8 /* Task.h */,
 				D98D287116D6A799001886B8 /* Task.m */,
-				D98D286D16D6A4EA001886B8 /* TaskViewController.h */,
-				D98D286E16D6A4EA001886B8 /* TaskViewController.m */,
 				D98D285116D6A290001886B8 /* Supporting Files */,
 				D9F59C3016D6B5DD00735470 /* TaskCell.h */,
 				D9F59C3116D6B5DD00735470 /* TaskCell.m */,
+				D9E8C4B316DD0EEA0089DD50 /* TaskViewControllerDelegate.h */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -196,7 +193,6 @@
 				D98D285716D6A290001886B8 /* main.m in Sources */,
 				D98D285B16D6A290001886B8 /* AppDelegate.m in Sources */,
 				D98D286716D6A290001886B8 /* ToDoViewController.m in Sources */,
-				D98D286F16D6A4EA001886B8 /* TaskViewController.m in Sources */,
 				D9F59C3216D6B5DD00735470 /* TaskCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

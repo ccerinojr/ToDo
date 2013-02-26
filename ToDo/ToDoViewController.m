@@ -7,13 +7,12 @@
 //
 
 #import "ToDoViewController.h"
-#import "TaskViewController.h"
 #import "Task.h"
 #import "TaskCell.h"
 #import <QuartzCore/QuartzCore.h>
 
 
-@interface ToDoViewController () <TaskViewControllerDelegate>
+@interface ToDoViewController ()
 {
    NSMutableArray* _tasks;
 }
@@ -60,33 +59,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-	if ([segue.identifier isEqualToString:@"AddTask"])
-	{
-      TaskViewController* taskViewController = segue.destinationViewController;
-      taskViewController.taskDelgate = self;
-   }
-   else if ([segue.identifier isEqualToString:@"EditTask"])
-   {
-      TaskViewController* taskViewController = segue.destinationViewController;
-      taskViewController.taskDelgate = self;
-      NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-      taskViewController.task = [_tasks objectAtIndex:indexPath.row];
-   }
-}
 
-- (void)taskSaved:(Task*)task wasEditting:(BOOL)editing
-{
-   if (!editing)
-   {
-      [_tasks addObject:task];
-      [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:_tasks.count-1 inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
-   }
-   else
-   {
-      [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:[_tasks indexOfObject:0] inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
-   }
-
-   [self saveTasks];
 }
 
 #pragma mark UITableViewDataSource
@@ -103,51 +76,19 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   return [tableView dequeueReusableCellWithIdentifier:@"ToDoCell"];;
+   return [tableView dequeueReusableCellWithIdentifier:@"ToDoCell"];
 }
 
 #pragma mark UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   Task* task = [_tasks objectAtIndex:indexPath.row];
-   TaskCell* taskCell = (TaskCell*)cell;
-
-   taskCell.titleLabel.text = task.title;
-   taskCell.descriptionLabel.text = task.taskDescription;
-   
-   NSDateFormatter* dateFormater = [[NSDateFormatter alloc] init];
-   [dateFormater setDateFormat:@"M/d/YY '@' h:mm a"];
-   taskCell.dateLabel.text = [dateFormater stringFromDate:task.dueDate];
-   
-   TaskState state = [task isTaskDue];
-   taskCell.dateLabel.textColor = state == TaskNotDue ? [UIColor blueColor] : [UIColor redColor];
-  
-   if (state == TaskPastDue)
-   {
-      CABasicAnimation* fade = [CABasicAnimation animationWithKeyPath:@"opacity"];
-      fade.fromValue = [NSNumber numberWithFloat:1.0];
-      fade.toValue = [NSNumber numberWithFloat:0.0];
-      fade.repeatCount = HUGE_VALF;
-      fade.duration = 0.75;
-      fade.autoreverses = YES;
-      [taskCell.dateLabel.layer addAnimation:fade forKey:@"fade"];
-   }
-   else
-   {
-      [taskCell.layer removeAllAnimations];
-   }
    
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   if (editingStyle == UITableViewCellEditingStyleDelete)
-   {
-      [_tasks removeObjectAtIndex:indexPath.row];
-      [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-      [self saveTasks];
-   }
+
 }
 
 @end
