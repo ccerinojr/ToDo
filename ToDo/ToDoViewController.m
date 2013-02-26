@@ -59,8 +59,20 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+   //TaskViewController* taskViewController = segue.destinationViewController;
 
+	if ([segue.identifier isEqualToString:@"AddTask"])
+	{
+      //Setup the TaskViewController for adding a task
+   }
+   else if ([segue.identifier isEqualToString:@"EditTask"])
+   {
+      NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+      
+      //Setup the TaskViewController for editing the above task
+   }
 }
+
 
 #pragma mark UITableViewDataSource
 
